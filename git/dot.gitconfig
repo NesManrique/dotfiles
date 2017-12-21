@@ -3,3 +3,5 @@
 	email = nestor.manrique@cwc.com
 [commit]
 	template = /Users/dispo/.gitcommit
+[core]
+    editor = vim
