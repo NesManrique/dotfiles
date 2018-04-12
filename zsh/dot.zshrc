@@ -25,7 +25,7 @@ zsh_internet_signal(){
 
 ## Left Prompt
 POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon custom_internet_signal  dir dir_writable vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon custom_internet_signal  dir dir_writable virtualenv vcs)
 POWERLEVEL9K_OS_ICON_BACKGROUND="white"
 POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
 POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL_BACKGROUND="234"
