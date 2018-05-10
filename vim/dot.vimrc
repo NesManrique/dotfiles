@@ -193,10 +193,10 @@ let g:ansible_name_highlight = 'b'
 let g:ansible_extra_keywords_highlight = 1
 
 " Identation for md and yml files (ansible playbooks and roles)
-au BufNewFile,BufRead *.yml,*.md set tabstop=2
-au BufNewFile,BufRead *.yml,*.md set softtabstop=2
-au BufNewFile,BufRead *.yml,*.md set shiftwidth=2
-au BufNewFile,BufRead *.yml,*.md set expandtab
+au BufNewFile,BufRead *.yaml,*.yml,*.md set tabstop=2
+au BufNewFile,BufRead *.yaml,*.yml,*.md set softtabstop=2
+au BufNewFile,BufRead *.yaml,*.yml,*.md set shiftwidth=2
+au BufNewFile,BufRead *.yaml,*.yml,*.md set expandtab
 
 """ OTHER CONFIGS
 " Add the following to ~/.inputrc will set all the shell to VIM mode
