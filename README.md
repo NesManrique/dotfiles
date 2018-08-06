@@ -3,7 +3,7 @@ My hidden configuration files
 
 # Rough install/config guide for reference
 
-## Configuring macOS working environment
+## Configuring OSX working environment
 
 ### Config iterm2
 	[x] download iterm2
@@ -39,4 +39,4 @@ My hidden configuration files
 		[x] vim-unimpaired
 		[] ctrlp
 
-### Git
+### Config Git
