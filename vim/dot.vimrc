@@ -2,20 +2,22 @@
 execute pathogen#infect()
 " VIM Plugins
 "
-"   Terminal color scheme - https://github.com/jnurmine/Zenburn
+"   Terminal color scheme - https://github.com/altercation/vim-colors-solarized (also to be set in iterm2)
+"   Vim Commentary - https://github.com/tpope/vim-commentary
+"   Vim Surround - https://github.com/tpope/vim-surround
+"   Git itegration - https://github.com/tpope/vim-fugitive
+"   Vim Repeat - https://github.com/tpope/vim-repeat
+"   Vim Unimpaired - https://github.com/tpope/vim-unimpaired
+"
+" Optionals
 "   NERDTree File Browser - https://github.com/scrooloose/nerdtree
 "   NERDTree and tabs together in Vim, painlessly - https://github.com/jistr/vim-nerdtree-tabs
 "   Omnisearch in VIM - https://github.com/ctrlpvim/ctrlp.vim
-"   Completion - https://github.com/Valloric/YouCompleteMe
 "   Folding methods and clasess - https://github.com/tmhedberg/SimpylFold
 "   Auto-Indentation - https://github.com/vim-scripts/indentpython.vim
-"   Syntax Checking/Highlighting - https://github.com/vim-syntastic/syntastic
-"       * Perform pip install flake8 to enable python checker
-"   Git integration - https://github.com/tpope/vim-fugitive
 "   Tags bar - http://ctags.sourceforge.net/ and https://github.com/majutsushi/tagbar
-"   Vim Surround - https://github.com/tpope/vim-surround
-"   Vim Unimpaired - https://github.com/tpope/vim-unimpaired
 
+"   Completion - https://github.com/Valloric/YouCompleteMe
 
 """ GENERAL VIM STUFF
 
@@ -104,7 +106,7 @@ nnoremap , zA
 
 " SYNTASTIC OPTIONS
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_mode_map = {
         \ "mode": "passive",
@@ -170,7 +172,7 @@ highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 
 " Flag unnecesary whitespace
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.yml match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.yml,*.sls match BadWhitespace /\s\+$/
 
 " Proper PEP8 identation and line length
 au BufNewFile,BufRead *.py,*.sh set tabstop=4
@@ -193,10 +195,11 @@ let g:ansible_name_highlight = 'b'
 let g:ansible_extra_keywords_highlight = 1
 
 " Identation for md and yml files (ansible playbooks and roles)
-au BufNewFile,BufRead *.yaml,*.yml,*.md set tabstop=2
-au BufNewFile,BufRead *.yaml,*.yml,*.md set softtabstop=2
-au BufNewFile,BufRead *.yaml,*.yml,*.md set shiftwidth=2
-au BufNewFile,BufRead *.yaml,*.yml,*.md set expandtab
+" also for saltstack and similar files
+au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set tabstop=2
+au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set softtabstop=2
+au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set shiftwidth=2
+au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set expandtab
 
 """ OTHER CONFIGS
 " Add the following to ~/.inputrc will set all the shell to VIM mode
