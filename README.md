@@ -3,13 +3,13 @@ My hidden configuration files
 
 # Rough install/config guide for reference
 
-##Configuring macOS working environment
+## Configuring macOS working environment
 
-###Config iterm2
+### Config iterm2
 	[x] download iterm2
 	[x] Download solarized dark patched color scheme. https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes
 
-###Config zsh + ohmyzsh + powerlinelvl9k
+### Config zsh + ohmyzsh + powerlinelvl9k
 	[x] brew install zsh zsh-completions
 	[x] add /usr/local/bin/zsh to /etc/shells
 	[x] chsh -s $(which zsh)
@@ -27,7 +27,7 @@ My hidden configuration files
 	[] Download plugins:
 		
 
-###Config vim
+### Config vim
 	[x] Copy .vimrc to home
 	[x] Install pathogen
 	[] Download plugins:
@@ -39,4 +39,4 @@ My hidden configuration files
 		[x] vim-unimpaired
 		[] ctrlp
 
-###Git
+### Git
