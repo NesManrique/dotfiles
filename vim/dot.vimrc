@@ -29,7 +29,7 @@ set ruler
 
 " Set statusline options
 set laststatus=2
-set statusline+=%t\ %l:\ %c
+set statusline+=%f\ %l:\ %c
 
 " Enables filetype detection
 filetype plugin indent on
@@ -68,9 +68,9 @@ set backspace=indent,eol,start
 set expandtab
 "set autoindent
 set fileformat=unix
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " UTF8 Support
 set encoding=utf-8
@@ -175,10 +175,10 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.yml,*.sls match BadWhitespace /\s\+$/
 
 " Proper PEP8 identation and line length
-au BufNewFile,BufRead *.py,*.sh set tabstop=4
-au BufNewFile,BufRead *.py,*.sh set softtabstop=4
-au BufNewFile,BufRead *.py,*.sh set shiftwidth=4
-au BufNewFile,BufRead *.py,*.sh set textwidth=120
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set textwidth=120
 
 " Folding methods and classes based on indentation
 autocmd FileType python set foldmethod=indent
