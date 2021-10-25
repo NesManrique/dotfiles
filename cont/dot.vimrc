@@ -89,6 +89,9 @@ set matchpairs+=<:>
 " :so $VIMRUNTIME/syntax/hitest.vim shows you all the
 " current highlighting group colors
 
+"Fix for SignColumn colorscheme https://github.com/airblade/vim-gitgutter/issues/696
+au ColorScheme * highlight! link SignColumn LineNr
+
 "set t_Co=256
 "colors zenburn
 set background=dark
@@ -102,8 +105,8 @@ colors solarized
 
 " SIMPYLFOLD OPTIONS
 let g:SimpylFold_docstring_preview = 1
-" Enable toggling folds with the ,
-nnoremap , zA
+" Enable toggling folds with <leader>,
+nnoremap <leader>, zA
 
 
 " SYNTASTIC OPTIONS
@@ -154,18 +157,23 @@ let g:ctrlp_custom_ignore = {
 " TAG-BAR OPTIONS
 nmap <F8> :TagbarToggle<CR><C-L>
 
+" VIM-COMMENTARY OPTIONS
+autocmd FileType *.sls setlocal commentstring=#\ %s
+
+" VIM-GITGUTTER OPTIONS
+nmap <leader>g :GitGutterToggle<CR>
 
 """ PYTHON RELATED CONFIGS
 
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+" py << EOF
+" import os
+" import sys
+" if 'VIRTUAL_ENV' in os.environ:
+"   project_base_dir = os.environ['VIRTUAL_ENV']
+"   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"   execfile(activate_this, dict(__file__=activate_this))
+" EOF
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
@@ -202,6 +210,7 @@ au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set tabstop=2
 au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set softtabstop=2
 au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set shiftwidth=2
 au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set expandtab
+au BufNewFile,BufRead *.yaml,*.yml setlocal commentstring=#\ %s
 
 """ OTHER CONFIGS
 " Add the following to ~/.inputrc will set all the shell to VIM mode
@@ -209,7 +218,7 @@ au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set expandtab
 "
 " set editing-mode vi
 
-" Disable arrow keys
+" Disable arrow keys and esc
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>

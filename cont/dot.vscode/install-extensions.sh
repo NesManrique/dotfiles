@@ -1,0 +1,21 @@
+code --install-extension CodeStream.codestream --force &
+code --install-extension codezombiech.gitignore --force &
+code --install-extension GitHub.vscode-pull-request-github --force &
+code --install-extension golang.go --force &
+code --install-extension googlecloudtools.cloudcode --force &
+code --install-extension hashicorp.terraform --force &
+code --install-extension James-Yu.latex-workshop --force &
+code --install-extension korekontrol.saltstack --force &
+code --install-extension mikestead.dotenv --force &
+code --install-extension ms-azuretools.vscode-docker --force &
+code --install-extension ms-kubernetes-tools.kind-vscode --force &
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools --force &
+code --install-extension ms-vscode-remote.remote-containers --force &
+code --install-extension NicolasVuillamy.vscode-groovy-lint --force &
+code --install-extension redhat.vscode-commons --force &
+code --install-extension redhat.vscode-yaml --force &
+code --install-extension secanis.jenkinsfile-support --force &
+code --install-extension spaceduck-vscode.spaceduck --force &
+code --install-extension Tim-Koehler.helm-intellisense --force &
+code --install-extension vscodevim.vim --force &
+code --install-extension yzhang.markdown-all-in-one --force
