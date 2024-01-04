@@ -16,3 +16,6 @@ cp -r dotfiles/nix/home-manager ~/.config/home-manager
 # Activate home-manager
 nix run home-manager/release-23.11 -- init --switch
 
+# Clone other repos
+git clone git@github.com:nhost/be.git
+

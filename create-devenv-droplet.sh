@@ -23,7 +23,7 @@
 
 doctl compute droplet create \
     --image ubuntu-23-10-x64 \
-    --size s-1vcpu-2gb-amd \
+    --size s-2vcpu-4gb-amd \
     --region fra1 \
     --vpc-uuid 9fa1434f-56e3-4d38-afbb-86fb5de44a74 \
     --ssh-keys 34415022 \

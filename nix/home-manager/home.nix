@@ -35,6 +35,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     awscli2
+    docker
     kind
     kubectx
     kubernetes-helm
