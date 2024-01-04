@@ -27,9 +27,9 @@ doctl compute droplet create \
     --region fra1 \
     --vpc-uuid 9fa1434f-56e3-4d38-afbb-86fb5de44a74 \
     --ssh-keys 34415022 \
-    --user-data-file /mnt/e/windows10/Nestor/Documents/myrepos/dotfiles/dev-env-cloud-config.yml \
+    --user-data-file ./dev-env-cloud-config.yml \
     --wait \
     dev-env
 
-# doctl compute ssh --ssh-user nesmanrique --ssh-key-path ~/.ssh/id_rsa dev-env
+# doctl compute ssh --ssh-agent-forwarding --ssh-user nesmanrique --ssh-key-path ~/.ssh/id_rsa dev-env
 # doctl compute droplet delete <droplet-id>
