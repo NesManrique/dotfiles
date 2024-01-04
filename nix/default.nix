@@ -24,7 +24,7 @@ home-manager.lib.homeManagerConfiguration {
     ];
   };
   system = "x86_64-linux";
-  homeDirectory = "/home/<your-username>"; # Replace with your username
-  username = "<your-username>"; # Replace with your username
+  homeDirectory = "/home/nesmanrique"; # Replace with your username
+  username = "nesmanrique"; # Replace with your username
 }
 

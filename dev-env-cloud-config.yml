@@ -1,0 +1,22 @@
+# cloud-config
+
+users:
+  - name: nesmanrique
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDuwJos5mkv5erCQ3lqv37/C0N1OQ0NXcanoZ8Si9INGukTfmBigT6ZLX/N56BQPEeN5vQJ+Le8UIEM/AqNi2wa5KGmBLnWre7QgUy8P1wb5T/TEhXZZJKP0+xmvbZ/aJowQWHBWMW6AvH1+hJoBLU9ta7QLo6RY5B21mZ8cjHnnRgle/gsQ7SiP6CseXZHfCc+9T3Os91rZOoL+4f3oaBFfcsdgjkQkt8osIzkMfwr5g10sfeFVDjRpg2fRsGb+YigrxACoFUegiUz1SOxg7kC2OPIpV3H96sxYbTH+YtGneau9E7/bGK3HL72oe+6RynbmnZo4ShTMFIMy8uKrs3IAlZbgi1yGJQK2HO/nPQ8dMUdL5uG4EvMuGAqcDDJrTiwqJOnxdhUNJ6HRfXToCt+1GN140zYe960aQn9q98r62EsiTwYJLoGlK/j1dkdzwYpnCm8AQdYhQBMxgBHTHGXdC9vDzOcH3RBJMZYXy0RzrI9jYm+wpqOAZVEVBz3+cc= nestormanrique@Nestor-Legion
+
+# Debugging User Data
+# To see how a CloudInit file uses the provided user data, view the /var/log/cloud-init-output.log file:
+
+# cat /var/log/cloud-init-output.log | grep userdata
+# Copy
+# The file logs output from CloudInits so you can view any warnings, error messages, or debug information.
+
+runcmd:
+  - su - developer -c 'git clone git@github.com:NesManrique/dotfiles.git /home/developer/dotfiles'
+  - sh <(curl -L https://nixos.org/nix/install) --daemon
+  - su - developer -c 'nix-env -i /home/developer/dotfiles/nix/default.nix'
+
