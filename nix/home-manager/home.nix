@@ -35,7 +35,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     awscli2
-    docker
+    gnumake
     kind
     kubectx
     kubernetes-helm
