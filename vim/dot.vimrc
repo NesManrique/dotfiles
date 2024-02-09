@@ -123,15 +123,6 @@ nmap <silent> <leader>c :w<cr>:SyntasticCheck<cr>
 nmap <silent> <leader>C :SyntasticReset<cr>
 
 
-" NERDTREE AND NERDTREE-TAB OPTIONS
-" Hide .pyc files in nerdtree
-"let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-" Toggle NERDTree with leader(space)+n
-"map <leader>n :NERDTreeTabsToggle<CR>
-" Find currently opened file and select it
-"map <leader>f :NERDTreeFind<CR>
-
-
 " CTRL-P OPTIONS
 "Default mapping and the default command to invoke CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -148,51 +139,8 @@ let g:ctrlp_custom_ignore = {
      \ 'file': '\v\.(pyc)$',
      \ }
 
-
 " TAG-BAR OPTIONS
 nmap <F8> :TagbarToggle<CR><C-L>
-
-
-""" PYTHON RELATED CONFIGS
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
-
-" Use the below highlight group when displaying bad whitespace is desired.
-highlight BadWhitespace ctermbg=red guibg=red
-
-" Display tabs at the beginning of a line in Python mode as bad.
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
-
-" Flag unnecesary whitespace
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.yml,*.sls match BadWhitespace /\s\+$/
-
-" Proper PEP8 identation and line length
-au BufNewFile,BufRead *.py set tabstop=4
-au BufNewFile,BufRead *.py set softtabstop=4
-au BufNewFile,BufRead *.py set shiftwidth=4
-au BufNewFile,BufRead *.py set textwidth=120
-
-" Folding methods and classes based on indentation
-autocmd FileType python set foldmethod=indent
-
-" Pretty syntax
-let python_highlight_all=1
-
-""" ANSIBLE RELATED CONFIGS
-
-au BufNewFile,BufRead *.yml set filetype=ansible
-
-let g:ansible_attribute_highlight = "ab"
-let g:ansible_name_highlight = 'b'
-let g:ansible_extra_keywords_highlight = 1
 
 " Identation for md and yml files (ansible playbooks and roles)
 " also for saltstack and similar files
@@ -200,12 +148,6 @@ au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set tabstop=2
 au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set softtabstop=2
 au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set shiftwidth=2
 au BufNewFile,BufRead *.yaml,*.yml,*.md,*.sls set expandtab
-
-""" OTHER CONFIGS
-" Add the following to ~/.inputrc will set all the shell to VIM mode
-" including python interpreters, and stuff.
-"
-" set editing-mode vi
 
 " Disable arrow keys
 map <up> <nop>

@@ -1,0 +1,16 @@
+#cloud-config
+
+users:
+  - name: nesmanrique
+    groups: sudo
+    shell: /bin/bash
+    sudo: 'ALL=(ALL) NOPASSWD:ALL'
+    ssh_import_id:
+      - gh:NesManrique
+
+# Debugging User Data
+# To see how a CloudInit file uses the provided user data, view the /var/log/cloud-init-output.log file:
+
+# cat /var/log/cloud-init-output.log | grep userdata
+# Copy
+# The file logs output from CloudInits so you can view any warnings, error messages, or debug information.
