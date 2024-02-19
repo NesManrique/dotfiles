@@ -6,7 +6,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd('colorscheme tokyonight')
+      vim.cmd('colorscheme tokyonight-moon')
     end
   },
 
@@ -28,7 +28,7 @@ return {
   -- Syntax highlighting based on treesitter
   {
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate'
+    build = ':TSUpdate',
   },
 
   -- Quick access buffer list
@@ -106,5 +106,40 @@ return {
       vim.o.timeoutlen = 500
     end
   },
+
+  -- File explorer
+  {
+    "kyazdani42/nvim-tree.lua",
+    config = function()
+      require("nvim-tree").setup({
+        update_focused_file = {
+          enable = true,
+        },
+      })
+    end
+  },
+
+  -- Indentation guides
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    config = function()
+      require("ibl").setup()
+    end
+  },
+
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+    },
+  },
+
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+  }
 
 }

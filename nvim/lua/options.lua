@@ -75,3 +75,17 @@ vim.opt.foldlevel = 99
 
 -- Mouse support for normal, visual, insert and command mode
 vim.opt.mouse = "a"
+
+-- Clipboard support for WSL
+vim.g.clipboard = {
+  name = "WslClipboard",
+  copy = {
+    ["+"] = "win32yank.exe -i --crlf",
+    ["*"] = "win32yank.exe -i --crlf",
+  },
+  paste = {
+    ["+"] = "win32yank.exe -o --lf",
+    ["*"] = "win32yank.exe -o --lf",
+  },
+  cache_enabled = 0,
+}
