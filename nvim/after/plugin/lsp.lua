@@ -40,7 +40,7 @@ require("mason-lspconfig").setup({
         "rust_analyzer",
         "terraformls",
         "yamlls",
-        "vale-ls",
+        "vale_ls",
     },
     automatic_installation = true,
 })
