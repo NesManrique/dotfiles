@@ -20,7 +20,7 @@ h.NormalRemap('<C-p>', telescope_builtin.git_files, { desc = "Fuzzy find in git 
 -- Search everything in directory
 h.NormalRemap('<leader>pf', telescope_builtin.find_files, { desc = "Fuzzy find files in current directory" })
 -- Search buffers
-h.NormalRemap('<leader>pb', telescope_builtin.buffers, { desc = "Fuzzy find in git repo" })
+h.NormalRemap('<leader>pb', telescope_builtin.buffers, { desc = "Fuzzy find in buffers" })
 -- Search keymaps
 h.NormalRemap('<leader>pk', telescope_builtin.keymaps, {desc = "Fuzzy find keymaps" })
 -- Search using Grep

@@ -86,6 +86,14 @@ return {
       require("lualine").setup({
         icons_enabled = true,
         theme = 'dracula',
+        sections = {
+          lualine_c = {
+            {
+              "filename",
+              path = 1
+            },
+          },
+        }
       })
     end,
   },
