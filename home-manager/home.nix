@@ -30,15 +30,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    awscli2
-    gnumake
-    kind
-    kubectx
-    kubernetes-helm
-    terraform
-    terraform-lsp
-    terragrunt
-    cargo
   ];  
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -68,7 +59,7 @@
   #  /etc/profiles/per-user/nesmanrique/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
