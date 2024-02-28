@@ -15,7 +15,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations."nesmanrique" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."nestormanrique" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
@@ -23,6 +23,7 @@
         modules = [ 
           ./home.nix
           ./allowUnfree.nix
+          #./zsh.nix
         ];
 
         # Optionally use extraSpecialArgs

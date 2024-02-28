@@ -1,5 +1,7 @@
+local h = require "helpers"
+
 -- Save with :W in addition to :w
-vim.cmd('command! W write')
+h.AddUserCommand("W", "write")
 
 -- Set the cursor to be a big white block
 vim.opt.guicursor = ""
@@ -67,3 +69,23 @@ vim.g.mapleader = " "
 vim.opt.foldmethod = "indent"
 -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
+
+-- Set clipboard to system clipboard
+-- vim.opt.clipboard = "unnamedplus"
+
+-- Mouse support for normal, visual, insert and command mode
+vim.opt.mouse = "a"
+
+-- Clipboard support for WSL
+vim.g.clipboard = {
+  name = "WslClipboard",
+  copy = {
+    ["+"] = "win32yank.exe -i --crlf",
+    ["*"] = "win32yank.exe -i --crlf",
+  },
+  paste = {
+    ["+"] = "win32yank.exe -o --lf",
+    ["*"] = "win32yank.exe -o --lf",
+  },
+  cache_enabled = 0,
+}

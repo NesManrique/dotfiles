@@ -1,3 +1,4 @@
+# This is needed to install terraform because of license changes
 { pkgs, ... }: {
   nixpkgs = {
     config = {
