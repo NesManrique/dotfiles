@@ -2,6 +2,10 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Otherwise doing <Esc>j or <Esc>k resulted in lines being moved
+vim.keymap.del("n", "<A-k>")
+vim.keymap.del("n", "<A-j>")
+
 -- these keep the cursor in the middle when scrolling with ctrl d and u
 -- from https://github.com/ThePrimeagen/init.lua
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
