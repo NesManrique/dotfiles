@@ -7,7 +7,7 @@ return {
         fish = { "fish_indent" },
         sh = { "shfmt" },
         nix = { "nixfmt" },
-        go = { "gofumpt", "golines" },
+        go = { "goimports", "golines" },
       },
     },
   },

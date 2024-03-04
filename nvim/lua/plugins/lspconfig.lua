@@ -5,7 +5,7 @@ return {
     opts = {
       servers = {
         bashls = {},
-        -- gopls = {},
+        gopls = {},
         helm_ls = {},
         lua_ls = {},
         marksman = {},
