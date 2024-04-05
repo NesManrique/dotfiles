@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     ##### General packages
     gnumake
@@ -55,9 +54,9 @@
     terraform-lsp
     terragrunt
   ];
-      programs.go = {
-      enable = true;
-      package = pkgs.go_1_17;
-    };
+  # programs.go = with pkgs; {
+  #   enable = true;
+  #   package = go_1_17;
+  # };
 
 }

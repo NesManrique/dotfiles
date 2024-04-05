@@ -17,6 +17,7 @@
     userEmail = "nes.manrique@gmail.com";
 
     extraConfig = {
+      init = { defaultBranch = "main"; };
       core = {
         excludesFile = "~/.gitignore";
         editor = "nvim";
