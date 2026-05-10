@@ -1,42 +1,60 @@
 # dotfiles
-My hidden configuration files
 
-# Rough install/config guide for reference
+Cross-platform dotfiles and developer environment configuration managed with
+Nix.
 
-## Configuring OSX working environment
+## Layout
 
-### Config iterm2
-	[x] download iterm2
-	[x] Download solarized dark patched color scheme. https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes
+- `modules/_home/`: reusable Home Manager feature modules shared across hosts
+- `modules/home-modules.nix`: central flake export for shared Home Manager
+  modules
+- `modules/hosts/ubuntu-wsl/`: the active Ubuntu 24.04 WSL Home Manager target
+- `modules/hosts/work-macos/`: placeholder nix-darwin host slot for the future
+- `config-files/`: source-managed dotfiles reused by features
+- `legacy-nix/`: previous Nix setup kept as migration reference
 
-### Config zsh + ohmyzsh + powerlinelvl9k
-	[x] brew install zsh zsh-completions
-	[x] add /usr/local/bin/zsh to /etc/shells
-	[x] chsh -s $(which zsh)
-	[x] sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	[x] copy .zshrc file to home
-	[x] Install powerlvl9k: 
-		$ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-	[x] Install powerline fonts:
-		$ brew install python
-		$ git clone https://github.com/powerline/fonts
-		[optional] $ brew search powerline (to check the list of fonts)
-		$ brew cask install homebrew/cask-fonts/font-source-code-pro-for-powerline
-	[x] Select font in iterm2: Preference > Profile > Text
-	[x] Follow steps in: https://github.com/gabrielelana/awesome-terminal-fonts/wiki/OS-X
-	[] Download plugins:
-		
+## Ubuntu WSL bootstrap
 
-### Config vim
-	[x] Copy .vimrc to home
-	[x] Install pathogen
-	[] Download plugins:
-		[x] vim-colors-solarized
-		[x] vim-commentary
-		[x] vim-surround
-		[x] vim-fugitive
-		[x] vim-repeat
-		[x] vim-unimpaired
-		[] ctrlp
+Run the bootstrap script from the repo root:
 
-### Config Git
+```bash
+./scripts/bootstrap.sh
+```
+
+The script installs Nix if needed, enables flakes for the user, installs the
+configuration using an existing `home-manager` command when available, and
+otherwise falls back to `nix run`, then applies the `nestor-wsl`
+configuration.
+
+## Daily usage
+
+Apply the current configuration:
+
+```bash
+home-manager switch --flake .#nestor-wsl
+```
+
+Inspect what the flake exports:
+
+```bash
+nix flake show
+```
+
+## Global Tooling Defaults
+
+The shared workstation profile currently includes:
+
+- `direnv` and `nix-direnv` integration through Home Manager
+- Go tooling for quick ad hoc work: `go`, `gopls`, `golangci-lint`, and
+  `gotools`
+- Nix authoring tools: `nixd` and `alejandra`
+
+Project flakes are still the right place for pinned tool versions or
+repo-specific dependencies, but the global profile is meant to be enough for
+exploration and small projects without extra scaffolding.
+
+## Notes
+
+- Ubuntu WSL is managed with standalone Home Manager, not NixOS-WSL.
+- The shared feature layer is designed to be reused later by a
+  `nix-darwin`-based macOS host.

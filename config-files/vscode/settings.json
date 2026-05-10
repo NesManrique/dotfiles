@@ -1,0 +1,106 @@
+{
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.copyOnSelection": true,
+    "[terraform]": {
+        "editor.defaultFormatter": "hashicorp.terraform",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
+    "[terraform-vars]": {
+        "editor.defaultFormatter": "hashicorp.terraform",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
+    "[hcl]": {
+        "editor.defaultFormatter": "hashicorp.hcl",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
+    "editor.minimap.enabled": false,
+    "window.title": "${dirty}${activeEditorLong}${separator}${rootName}${separator}${appName}",
+    "terminal.integrated.persistentSessionScrollback": 1000000000000000000,
+    "terminal.integrated.scrollback": 1e+26,
+    "python.formatting.provider": "black",
+    "python.venvFolders": [
+        "${workspaceFolder}/.env"
+    ],
+    "python.venvPath": "${workspaceFolder}/.env",
+    "editor.tabSize": 2,
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false,
+        "yaml": true,
+        "go": true
+    },
+    "editor.accessibilitySupport": "off",
+    "githubPullRequests.pullBranch": "never",
+    "go.toolsManagement.autoUpdate": true,
+    "[sql]": {
+        "editor.defaultFormatter": "mtxr.sqltools"
+    },
+    "go.useLanguageServer": true,
+    "gopls": {
+        "ui.semanticTokens": true,
+        "formatting.gofumpt": true,
+    },
+    "go.formatTool": "gofumpt",
+    "[go]": {
+
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+    },
+    "extensions.ignoreRecommendations": true,
+    "githubPullRequests.terminalLinksHandler": "github",
+    "files.associations": {
+        "*.hcl": "terragrunt",
+        "*.cue": "cue"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "vim.leader": "<space>",
+    "editor.lineNumbers": "relative",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-d>"],
+            "after": ["<C-d>","z","z"],
+        },
+        {
+            "before": ["<C-u>"],
+            "after": ["<C-u>","z","z"],
+        }
+    ],
+    "dev.containers.executeInWSLDistro": "Ubuntu-20.04-edisk",
+    "window.zoomLevel": 1,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "nix.enableLanguageServer": true,
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "/home/nestor/.nix-profile/bin/zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "zsh"
+}

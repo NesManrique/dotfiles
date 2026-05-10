@@ -1,0 +1,29 @@
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
+    alejandra
+    awscli2
+    cargo
+    codex
+    fd
+    gcc
+    git
+    go
+    golangci-lint
+    gopls
+    gnumake
+    kind
+    kubectl
+    kubectx
+    kubernetes-helm
+    neovim
+    nodejs
+    nil
+    nixd
+    ripgrep
+    terraform
+    terraform-lsp
+    terragrunt
+    unzip
+    vim
+  ];
+}
