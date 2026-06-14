@@ -19,6 +19,7 @@
     nodejs
     nil
     nixd
+    poppler-utils
     ripgrep
     terraform
     terraform-lsp
