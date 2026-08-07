@@ -24,6 +24,20 @@ in {
             email = "nes.manrique@gmail.com";
             name = "nestor.manrique";
           };
+
+          # 1Password's SSH agent runs on Windows. Git inside WSL delegates
+          # SSH requests to Windows OpenSSH, which then requests authorization
+          # from 1Password.
+          settings.core.sshCommand = "/mnt/c/Windows/System32/OpenSSH/ssh.exe";
+        };
+
+        # Put a transparent `ssh` wrapper ahead of the Linux OpenSSH client.
+        # `home.sessionPath` already places ~/.local/bin first in PATH.
+        home.file.".local/bin/ssh" = {
+          source = pkgs.writeShellScript "ssh" ''
+            exec /mnt/c/Windows/System32/OpenSSH/ssh.exe "$@"
+          '';
+          executable = true;
         };
       }
     ];
