@@ -30,6 +30,8 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
+      nixswitch = "home-manager switch --flake .#nestor-wsl";
+      nixup = "(cd ~/myrepos/dotfiles && nix flake update && home-manager switch --flake .#nestor-wsl)";
       zshconfig = "nvim ~/.zshrc";
     };
     oh-my-zsh = {

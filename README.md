@@ -42,6 +42,22 @@ nix flake show
 
 ## Global Tooling Defaults
 
+### Codex CLI
+
+Codex comes from a separate `nixpkgs-codex` input pinned to revision
+`16b463698a5b9f20881b6c5f1150ce37e2456db9`, providing Codex 0.167.0 with
+a cached x86_64-linux binary. Other packages use the main nixpkgs input.
+`nixup` preserves this explicit revision; change its URL in `flake.nix` to
+upgrade Codex deliberately.
+
+If you installed the npm version, remove it so it does not shadow the Nix binary:
+
+```bash
+npm uninstall --global --prefix "$HOME/.local" @openai/codex
+```
+
+### Nix-managed tools
+
 The shared workstation profile currently includes:
 
 - `direnv` and `nix-direnv` integration through Home Manager

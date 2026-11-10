@@ -1,9 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     alejandra
     awscli2
     cargo
-    codex
+    inputs.nixpkgs-codex.legacyPackages.${pkgs.stdenv.hostPlatform.system}.codex
     fd
     gcc
     git
@@ -11,6 +11,7 @@
     golangci-lint
     gopls
     gnumake
+    jq
     kind
     kubectl
     kubectx
