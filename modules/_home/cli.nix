@@ -6,6 +6,7 @@
     inputs.nixpkgs-codex.legacyPackages.${pkgs.stdenv.hostPlatform.system}.codex
     fd
     gcc
+    gh
     git
     go
     golangci-lint
